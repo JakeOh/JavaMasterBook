@@ -1,6 +1,6 @@
 package edu.javamasterbook.ch12.sec01;
 
-public class AppMain {
+public class Sec01Main {
 
     public static void main(String[] args) {
         System.out.println("12-1. Desgin Pattern: Abstract Factory Pattern");
