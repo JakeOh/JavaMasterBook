@@ -19,6 +19,7 @@ public class Sec01Main {
 
         System.out.println(studentList);
 
+        // anonymous class
         Collections.sort(studentList, new Comparator<Student>() {
             @Override
             public int compare(Student s1, Student s2) {
@@ -27,9 +28,16 @@ public class Sec01Main {
         });
         System.out.println(studentList);
 
+        // lambda expression
         Collections.sort(studentList,
                 (s1, s2) -> s1.getScore() - s2.getScore());
         System.out.println(studentList);
+
+        // method reference
+        System.out.println();
+        studentList.forEach(System.out::println);
+//        studentList.forEach(student -> System.out.println(student));
+        // same result
     }
 
 }
