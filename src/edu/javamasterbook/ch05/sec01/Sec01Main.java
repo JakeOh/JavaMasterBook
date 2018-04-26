@@ -1,5 +1,7 @@
 package edu.javamasterbook.ch05.sec01;
 
+import edu.javamasterbook.ch05.model.Student;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;

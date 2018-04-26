@@ -1,6 +1,7 @@
 package edu.javamasterbook.ch05.sec02;
 
 import java.util.*;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Sec02Main {
@@ -31,6 +32,16 @@ public class Sec02Main {
         Stream<Map.Entry<Integer, String>> stream = map.entrySet().stream();
         stream.forEach(el ->
                 System.out.println(el.getKey() + " : " + el.getValue()));
+
+        // stream from range
+        System.out.println();
+        IntStream intStream = IntStream.range(1, 5);
+        intStream.forEach(System.out::println);
+
+        System.out.println();
+        IntStream.rangeClosed(1, 5)
+                .forEach(System.out::println);
+
     }
 
 }

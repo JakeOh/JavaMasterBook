@@ -1,4 +1,4 @@
-package edu.javamasterbook.ch05.sec01;
+package edu.javamasterbook.ch05.model;
 
 public class Student {
     private String name;
