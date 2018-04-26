@@ -74,9 +74,15 @@ public class Sec05Main {
                 .min();
         System.out.println("min price = " + minPrice.getAsInt());
 
-        OptionalDouble sum = products.stream()
+        int sum = products.stream()
+                .mapToInt(Product::getProductPrice)
+                .sum();
+        System.out.println("sum price = " + sum);
+
+        OptionalDouble average = products.stream()
                 .mapToInt(Product::getProductPrice)
                 .average();
+        System.out.println("average price = " + average.getAsDouble());
     }
 
 }
