@@ -24,4 +24,23 @@ public class Student {
                 ", score=" + score +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean result = false;
+
+        if (obj instanceof Student) {
+            if (name.equals(((Student) obj).name) &&
+                    score == ((Student) obj).score) {
+                result = true;
+            }
+        }
+
+        return result;
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(score);
+    }
 }
