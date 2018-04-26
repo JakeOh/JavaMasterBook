@@ -8,7 +8,7 @@ import java.util.List;
 public class Sec04Main {
 
     public static void main(String[] args) {
-        System.out.println("5-04. Stream Intermediate Operations: filter, limit, distinct");
+        System.out.println("5-04. Stream Intermediate Operations: filter, limit, distinct, sorted");
 
         List<Student> students = new ArrayList<>();
         students.add(new Student("Foo", 95));
@@ -38,6 +38,18 @@ public class Sec04Main {
         students.stream()
                 .distinct()
                 .forEach(s -> System.out.println(s.getName()));
+
+        System.out.println();
+        students.stream()
+                .distinct()
+                .sorted((s1, s2) -> s1.getScore() - s2.getScore())
+                .forEach(System.out::println);
+
+        System.out.println();
+        students.stream()
+                .distinct()
+                .sorted((s1, s2) -> s1.getName().compareTo(s2.getName()))
+                .forEach(System.out::println);
     }
 
 }
