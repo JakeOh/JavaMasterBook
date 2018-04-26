@@ -1,7 +1,7 @@
 package edu.javamasterbook.ch05.sec02;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class Sec02Main {
 
@@ -20,7 +20,17 @@ public class Sec02Main {
                 .forEach(System.out::println);
 
         System.out.println();
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Classic Mechanics");
+        map.put(2, "Electrodynamics");
+        map.put(3, "Quantum Mechanics");
 
+        Set<Map.Entry<Integer, String>> entrySet = map.entrySet();
+        entrySet.forEach(System.out::println);
+
+        Stream<Map.Entry<Integer, String>> stream = map.entrySet().stream();
+        stream.forEach(el ->
+                System.out.println(el.getKey() + " : " + el.getValue()));
     }
 
 }
