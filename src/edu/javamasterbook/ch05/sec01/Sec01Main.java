@@ -28,9 +28,22 @@ public class Sec01Main {
         });
         System.out.println(studentList);
 
-        // lambda expression
-        Collections.sort(studentList,
-                (s1, s2) -> s1.getScore() - s2.getScore());
+        // Lambda expression
+        // (parameters) -> { // do something }
+        Collections.sort(studentList, (Student s1, Student s2) -> {
+            return s1.getName().compareTo(s2.getName());
+        });
+        System.out.println(studentList);
+
+        // omit parameter types
+        Collections.sort(studentList, (s1, s2) -> {
+            return Integer.compare(s1.getScore(), s2.getScore());
+        });
+        System.out.println(studentList);
+
+        // omit return statement and semicolon if there is only one statement
+        Collections.sort(studentList, (s1, s2) ->
+                s1.getScore() - s2.getScore());
         System.out.println(studentList);
 
         // method reference
@@ -38,6 +51,7 @@ public class Sec01Main {
         studentList.forEach(System.out::println);
 //        studentList.forEach(student -> System.out.println(student));
         // same result
+
     }
 
 }
